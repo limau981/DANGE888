@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DANGE888 - Toko Kue</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">DANGE<span>888</span></div>
+        <div class="tagline">Toko Kue Lezat & Fresh</div>
+      </div>
+
+      <nav class="nav">
+        <a href="#produk">Produk</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#kontak">Kontak</a>
+        <button class="btn btn-primary" id="btnLihatKeranjang" type="button">Keranjang (<span id="cartCount">0</span>)</button>
+        <button class="btn" id="btnLogin" type="button">Login</button>
+        <div class="nav-user" id="navUser" style="display:none; gap:10px; align-items:center;">
+          <span class="nav-user-name" id="navUserName" style="font-weight:800; color:rgba(234,240,255,.9)"></span>
+          <button class="btn btn-ghost" id="btnLogout" type="button">Logout</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Blocking Login Screen -->
+    <section class="login-screen" id="loginScreen" aria-label="Layar login" role="region">
+      <div class="login-screen-card">
+        <div class="login-screen-title">Masuk Dulu ke DANGE888</div>
+        <div class="login-screen-subtitle">Untuk melihat isi website dan melakukan checkout.</div>
+        <div class="login-screen-actions">
+          <button class="btn btn-primary" type="button" id="btnOpenLogin">Login</button>
+          <button class="btn" type="button" id="btnOpenRegister">Daftar</button>
+
+
+        </div>
+        <div class="login-screen-note"></div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="site-content" id="siteContent">
+      <section class="hero">
+
+
+
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>Pesan Kue Favoritmu di <span>DANGE888</span></h1>
+          <p>
+            Dari kue ulang tahun, brownies, hingga cookies. Pilih produk, masukkan ke keranjang, lalu
+            cek detail pesanan.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#produk">Lihat Produk</a>
+            <button class="btn btn-ghost" type="button" id="btnPromo">Promo Hari Ini</button>
+          </div>
+          <div class="badges" role="list">
+            <div class="badge" role="listitem">✅ Dibuat Fresh</div>
+            <div class="badge" role="listitem">🚚 Pengiriman Cepat</div>
+            <div class="badge" role="listitem">💬 Respon Cepat</div>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="Ringkasan pemesanan">
+          <h2>Ringkasan Pemesanan</h2>
+          <div class="summary">
+            <div class="summary-row"><span>Estimasi mulai produksi</span><strong id="timeProd">30 menit</strong></div>
+            <div class="summary-row"><span>Metode pembayaran</span><strong>Transfer / COD*</strong></div>
+            <div class="summary-row"><span>Area pengiriman</span><strong>Seputar Kota</strong></div>
+          </div>
+          <p class="muted">*COD tergantung wilayah & jam operasional.</p>
+          <div class="divider"></div>
+          <button class="btn btn-primary" type="button" id="btnCheckout">Checkout</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="produk">
+      <div class="container">
+        <div class="section-head">
+          <h2>Produk Unggulan</h2>
+          <p>Pilih menu, tentukan jumlah, lalu tambahkan ke keranjang.</p>
+        </div>
+
+        <div class="grid" id="productGrid"></div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="testimoni">
+      <div class="container">
+        <div class="section-head">
+          <h2>Testimoni Pelanggan</h2>
+          <p>Yang bilang kue DANGE888 enak dan rapi.</p>
+        </div>
+
+        <div class="testimoni-grid">
+          <article class="card">
+            <div class="stars">★★★★★</div>
+            <h3>Lia • Pontianak</h3>
+            <p>Kue ulang tahunnya cantik banget! Rasa juga juara.</p>
+          </article>
+          <article class="card">
+            <div class="stars">★★★★★</div>
+            <h3>Riyan • Pontianak</h3>
+            <p>Brownies lembut dan nggak eneg. Pasti repeat!</p>
+          </article>
+          <article class="card">
+            <div class="stars">★★★★★</div>
+            <h3>Rara • Pontianak</h3>
+            <p>Respon cepat. Pengemasan rapi. Recomended.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="kontak">
+      <div class="container kontak-grid">
+        <div>
+          <h2>Kontak & Pemesanan</h2>
+          <p class="muted">Pilih chat di bawah untuk tanya stok, harga, atau estimasi pengiriman.</p>
+
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div>
+                <div class="contact-title">Lokasi</div>
+                <div class="contact-text"><a herf="#" id="lokasiLink">Kota (Siantan, Kota Pontianak)</a></div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">🕒</div>
+              <div>
+                <div class="contact-title">Jam Operasional</div>
+                <div class="contact-text">08.00 - 20.00 WIB</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">☎️</div>
+              <div>
+                <div class="contact-title">WhatsApp</div>
+                <div class="contact-text"><a href="#" id="waLink">085251953887</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card checkout-card" aria-label="Checkout ringkas">
+          <h2>Checkout</h2>
+          <p class="muted">Tekan tombol untuk membuat ringkasan pesanan.</p>
+          <div class="cart-items" id="cartItems"></div>
+          <div class="cart-total">
+            <span>Total</span>
+            <strong id="cartTotal">Rp 0</strong>
+          </div>
+
+          <div class="cart-actions">
+            <button class="btn btn-primary" type="button" id="btnCheckout2">Buat Pesanan</button>
+            <button class="btn btn-danger" type="button" id="btnClearCart">Kosongkan</button>
+          </div>
+
+          <p class="note" id="orderNote">Belum ada item di keranjang.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+  <!-- Login Modal -->
+  <div class="modal" id="authModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-overlay" data-close="true" aria-label="Tutup"></div>
+    <div class="modal-card" role="document">
+      <div class="modal-head">
+        <div>
+          <div class="modal-title" id="authModalTitle">Login</div>
+          <div class="modal-subtitle">Masuk untuk checkout pesanan</div>
+        </div>
+        <button class="modal-close" id="authClose" type="button" aria-label="Tutup">✕</button>
+      </div>
+
+      <div class="modal-tabs" role="tablist" aria-label="Mode autentikasi">
+        <button type="button" class="tab" id="tabLogin" role="tab" aria-selected="true">Login</button>
+        <button type="button" class="tab" id="tabRegister" role="tab" aria-selected="false">Daftar</button>
+      </div>
+
+      <form id="authForm" class="modal-body" autocomplete="on">
+        <label class="field">
+          <span>Nama / Email</span>
+          <input id="authIdentifier" type="text" placeholder="mis: lia@contoh.com atau Lia" autocomplete="username" required />
+        </label>
+
+        <label class="field">
+          <span>Password</span>
+          <input id="authPassword" type="password" placeholder="••••••••" autocomplete="current-password" required minlength="4" />
+        </label>
+
+        <div class="error" id="authError" role="alert" aria-live="polite" style="display:none"></div>
+
+        <button class="btn btn-primary" type="submit" id="authSubmit">Login</button>
+
+        <div class="modal-note">
+          Dengan membuat akun, data tersimpan di perangkat ini.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Chatbot (front-end only) -->
+  <button class="chat-fab" type="button" id="chatFab" aria-label="Buka chatbot">
+    💬
+  </button>
+
+  <aside class="chat-window" id="chatWindow" aria-label="Chatbot">
+    <div class="chat-header">
+      <div>
+        <div class="chat-title">Chatbot DANGE888</div>
+        <div class="chat-subtitle">Tanya menu, harga, atau cara order</div>
+      </div>
+      <button class="chat-close" id="chatClose" type="button" aria-label="Tutup">✕</button>
+    </div>
+
+    <div class="chat-messages" id="chatMessages" role="log" aria-live="polite"></div>
+
+    <form class="chat-input" id="chatForm">
+      <input id="chatInput" type="text" placeholder="Ketik pesan..." autocomplete="off" />
+      <button class="btn btn-primary" type="submit">Kirim</button>
+    </form>
+
+    <div class="chat-hints">
+      Contoh: <button type="button" class="hint">harga brownies</button>
+      <button type="button" class="hint">bikin kue ulang tahun</button>
+      <button type="button" class="hint">cara order</button>
+      <button type="button" class="hint">pesan</button>
+    </div>
+  </aside>
+
+  <div id="toastContainer" aria-live="polite" aria-relevant="additions" style="position:fixed; left:50%; bottom:18px; transform:translateX(-50%); z-index:500; display:flex; flex-direction:column; gap:10px; pointer-events:none;"></div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span></div>
+      <div class="muted"></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
